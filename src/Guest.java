@@ -9,7 +9,6 @@ public class Guest {
         }
     }
     public Member register(String memberID, String title){
-        Member member = new Member(memberID, title);
-        return member;
+        return new Member(memberID, title);
     }
 }

@@ -8,7 +8,7 @@ public class Library {
     List<Librarian> librarians;
     public void registerLibrarian(Member member){
         for (Member current : members){
-            if (current.login == member.login){
+            if (current.login.equals(member.login)){
                 System.out.println("Invalid login credentials!");
                 return;
             }
@@ -17,7 +17,7 @@ public class Library {
     }
     public void addLibrarian(Librarian librarian){
         for (Librarian current : librarians){
-            if (current.login == librarian.login){
+            if (current.login.equals(librarian.login)){
                 System.out.println("Invalid login credentials!");
                 return;
             }

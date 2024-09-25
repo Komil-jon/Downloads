@@ -1,7 +1,7 @@
 public class Book {
-    private String bookID;
-    private String title;
-    private String author;
+    private final String bookID;
+    private final String title;
+    private final String author;
     private boolean isAvailable;
     Book(String bookID, String title, String author){
         this.bookID = bookID;
@@ -18,24 +18,20 @@ public class Book {
     public boolean isAvailableBook(){
         return this.isAvailable;
     }
-    public boolean borrowBook(){
+    public void borrowBook(){
         if (isAvailable){
             isAvailable = false;
             System.out.println("Book is booked successfully!");
-            return true;
         } else{
             System.out.println("Book is not available!");
-            return false;
         }
     }
-    public boolean returnBook(){
+    public void returnBook(){
         if (isAvailable){
             System.out.println("Book was not borrowed!");
-            return false;
         } else{
             isAvailable = true;
             System.out.println("Book is returned successfully!");
-            return true;
         }
     }
     public void displayBook(){

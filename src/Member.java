@@ -3,8 +3,8 @@ import java.util.List;
 public class Member extends Person{
     private String memberID;
     private String title;
-    private List<Book> borrowedBooks;
-    private List<Book> allBooks;
+    private final List<Book> borrowedBooks;
+    private final List<Book> allBooks;
     Member(String memberID, String title){
         super();
         this.memberID = memberID;
