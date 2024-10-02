@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Member extends Person{
@@ -5,12 +6,20 @@ public class Member extends Person{
     private String title;
     private final List<Book> borrowedBooks;
     private final List<Book> allBooks;
+    Member(String memberID){
+        super();
+        this.memberID = memberID;
+        this.borrowedBooks = new ArrayList<>();
+        this.allBooks = new ArrayList<>();
+        this.role = Role.MEMBER;
+    }
     Member(String memberID, String title){
         super();
         this.memberID = memberID;
         this.title = title;
-        this.borrowedBooks = null;
-        this.allBooks = null;
+        this.role = Role.MEMBER;
+        this.borrowedBooks = new ArrayList<>();
+        this.allBooks = new ArrayList<>();
     }
     public void borrowBook(Book book){
         if (book.isAvailableBook()){

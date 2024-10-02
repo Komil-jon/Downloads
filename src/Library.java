@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
@@ -5,7 +6,19 @@ public class Library {
     private String location;
     public List<Book> catalog;
     private List<Member> members;
-    List<Librarian> librarians;
+    private List<Librarian> librarians;
+    Library(String name, String location){
+        this.name = name;
+        this.location = location;
+        this.catalog = new ArrayList<>();
+        this.members = new ArrayList<>();
+        this.librarians = new ArrayList<>();
+    }
+    public void setter(List<Book> catalog, List<Member> members, List<Librarian> librarians){
+        this.catalog = catalog;
+        this.members = members;
+        this.librarians = librarians;
+    }
     public void registerLibrarian(Member member){
         for (Member current : members){
             if (current.login.equals(member.login)){

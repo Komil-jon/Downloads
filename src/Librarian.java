@@ -4,7 +4,17 @@ public class Librarian extends Person{
     private String librarianID;
     private String name;
     private List<Book> managedBooks;
-    private Library library;
+    Library library;
+    int age;
+    String login;
+    String password;
+    Librarian(String librarianID, String name, Library library){
+        super();
+        this.library = library;
+        this.role = Role.LIBRARIAN;
+        this.librarianID = librarianID;
+        this.name = name;
+    }
     public void addBook(Book book){
         library.getCatalog().add(book);
     }
